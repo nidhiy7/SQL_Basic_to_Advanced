@@ -7,8 +7,10 @@ Welcome to the SQL Tutorial! This guide will take you through the fundamentals o
 2. [Basic SQL Concepts](#basic-sql-concepts)
 3. [Data Manipulation Language (DML)](#data-manipulation-language-dml)
 4. [Data Definition Language (DDL)](#data-definition-language-ddl)
-5. [Advanced SQL Concepts](#advanced-sql-concepts)
-6. [Additional Concepts](#additional-concepts)
+5. [Data Control Language (DCL)](#data-control-language-dcl)
+6. [Transaction Control Language (TCL)](#transaction-control-language-tcl)
+7. [Advanced SQL Concepts](#advanced-sql-concepts)
+8. [Additional Concepts](#additional-concepts)
 
 ## Introduction to SQL
 SQL, or Structured Query Language, is a standard language for managing and manipulating relational databases. It is widely used for querying databases, inserting, updating, and deleting data, and defining database structures.
@@ -57,6 +59,28 @@ SQL, or Structured Query Language, is a standard language for managing and manip
 
 ### 5. CREATE VIEW
 - Creates a virtual table based on the result set of a SELECT query.
+
+## Data Control Language (DCL)
+### 1. GRANT
+- Grants permissions to users or roles.
+- Example: `GRANT SELECT ON Employees TO user1;`
+
+### 2. REVOKE
+- Revokes previously granted permissions from users or roles.
+- Example: `REVOKE INSERT ON Employees FROM user1;`
+
+## Transaction Control Language (TCL)
+### 1. COMMIT
+- Commits the current transaction, making all changes permanent.
+
+### 2. ROLLBACK
+- Rolls back the current transaction, undoing all changes made.
+
+### 3. SAVEPOINT
+- Sets a savepoint within the current transaction.
+
+### 4. ROLLBACK TO SAVEPOINT
+- Rolls back the transaction to a specific savepoint.
 
 ## Advanced SQL Concepts
 ### 1. Joins
