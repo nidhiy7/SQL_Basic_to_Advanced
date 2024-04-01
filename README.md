@@ -1,111 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SQL Concepts</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        line-height: 1.6;
-    }
-    h2 {
-        color: #333;
-    }
-    code {
-        font-family: Consolas, monospace;
-        background-color: #f4f4f4;
-        padding: 5px 10px;
-        border-radius: 4px;
-    }
-</style>
-</head>
-<body>
-    <h2>Basic SQL Concepts:</h2>
-    <ol>
-        <li>
-            <strong>Introduction to SQL:</strong>
-            <ul>
-                <li><em>Definition of SQL:</em> Structured Query Language (SQL) is a standard language for managing and manipulating relational databases.</li>
-                <li><em>Importance and usage in database management:</em> SQL allows users to interact with databases by querying, updating, and managing data.</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Relational Databases:</strong>
-            <ul>
-                <li><em>Understanding the concept of relational databases:</em> Relational databases organize data into tables with rows and columns.</li>
-                <li><em>Tables, rows, and columns:</em> Tables represent entities, rows contain individual records or tuples, and columns define attributes or fields of the data.</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Basic Queries:</strong>
-            <ul>
-                <li><em>SELECT statement:</em> The SELECT statement retrieves data from one or more tables based on specified criteria.
-                    <code>SELECT * FROM Users;</code></li>
-                <li><em>Retrieving data from a single table:</em> Example queries demonstrating the retrieval of data from a single table using SELECT.
-                    <code>SELECT username, email FROM Users;</code></li>
-                <li><em>Use of WHERE clause for filtering data:</em> The WHERE clause filters data based on specified conditions, allowing users to retrieve specific subsets of data.
-                    <code>SELECT * FROM Users WHERE username = 'john';</code></li>
-            </ul>
-        </li>
-        <li>
-            <strong>Sorting and Filtering:</strong>
-            <ul>
-                <li><em>ORDER BY clause for sorting:</em> The ORDER BY clause arranges query results in ascending or descending order based on specified columns.
-                    <code>SELECT * FROM Users ORDER BY username ASC;</code></li>
-                <li><em>LIMIT clause for limiting the number of rows returned:</em> The LIMIT clause restricts the number of rows returned by a query, which is useful for pagination or sampling.
-                    <code>SELECT * FROM Users LIMIT 10;</code></li>
-            </ul>
-        </li>
-        <li>
-            <strong>Aggregate Functions:</strong>
-            <ul>
-                <li><em>SUM(), AVG(), MIN(), MAX(), COUNT() functions:</em> Aggregate functions perform calculations on a set of values and return a single result.
-                    <code>SELECT COUNT(*) FROM Users;</code></li>
-                <li><em>Grouping data with GROUP BY clause:</em> The GROUP BY clause groups rows that have the same values into summary rows, typically used with aggregate functions.
-                    <code>SELECT department, AVG(salary) FROM Employees GROUP BY department;</code></li>
-                <li><em>Filtering grouped data with HAVING clause:</em> The HAVING clause filters grouped data based on specified conditions, similar to the WHERE clause but used with aggregated data.
-                    <code>SELECT department, AVG(salary) FROM Employees GROUP BY department HAVING AVG(salary) > 50000;</code></li>
-            </ul>
-        </li>
-    </ol>
+# SQL Tutorial
 
-    <h2>Additional Concepts:</h2>
-    <ul>
-        <li>
-            <strong>Constraints:</strong>
-            <ul>
-                <li><em>Primary Key:</em> Ensures each row in a table is uniquely identified.
-                    <code>CREATE TABLE Orders (order_id INT PRIMARY KEY, product_id INT, quantity INT);</code></li>
-                <li><em>Foreign Key:</em> Establishes a relationship between two tables based on a column in one table referencing the primary key in another.
-                    <code>CREATE TABLE Orders (order_id INT PRIMARY KEY, product_id INT, quantity INT, FOREIGN KEY (product_id) REFERENCES Products(product_id));</code></li>
-                <li><em>Unique Constraint:</em> Ensures that all values in a column are distinct.
-                    <code>CREATE TABLE Users (user_id INT PRIMARY KEY, username VARCHAR(50) UNIQUE);</code></li>
-                <li><em>Check Constraint:</em> Restricts the values that can be inserted into a column based on a logical expression.
-                    <code>CREATE TABLE Employees (employee_id INT, age INT CHECK (age >= 18));</code></li>
-                <li><em>Default Constraint:</em> Specifies a default value for a column when no value is explicitly provided.
-                    <code>CREATE TABLE Students (student_id INT, grade VARCHAR(2) DEFAULT 'A');</code></li>
-            </ul>
-        </li>
-        <li>
-            <strong>Commands:</strong>
-            <ul>
-                <li><em>CREATE TABLE:</em> Creates a new table in the database.
-                    <code>CREATE TABLE Products (product_id INT PRIMARY KEY, product_name VARCHAR(100), price DECIMAL(10,2));</code></li>
-                <li><em>ALTER TABLE:</em> Modifies the structure of an existing table.
-                    <code>ALTER TABLE Users ADD COLUMN date_joined DATE;</code></li>
-                <li><em>DROP TABLE:</em> Deletes a table and its data from the database.
-                    <code>DROP TABLE Products;</code></li>
-                <li><em>INSERT INTO:</em> Adds new rows of data into a table.
-                    <code>INSERT INTO Users (username, email) VALUES ('john_doe', 'john@example.com');</code></li>
-                <li><em>UPDATE:</em> Modifies existing data in a table.
-                    <code>UPDATE Users SET email = 'john.doe@example.com' WHERE user_id = 1;</code></li>
-                <li><em>DELETE FROM:</em> Removes rows of data from a table.
-                    <code>DELETE FROM Users WHERE user_id = 1;</code></li>
-                <li><em>CREATE INDEX:</em> Creates an index on a table column to improve query performance.
-                    <code>CREATE INDEX idx_username ON Users(username);</code></li>
-                <li><em>CREATE VIEW:</em> Creates a virtual table based on the result set of a SELECT query.
-                    <code>CREATE VIEW HighSalaryEmployees AS SELECT * FROM Employees WHERE salary > 100000;</code></li>
-            </ul>
+Welcome to the SQL Tutorial! This guide will take you through the fundamentals of SQL (Structured Query Language) from basic concepts to advanced topics.
 
+## Table of Contents
+1. [Introduction to SQL](#introduction-to-sql)
+2. [Basic SQL Concepts](#basic-sql-concepts)
+3. [Data Manipulation Language (DML)](#data-manipulation-language-dml)
+4. [Data Definition Language (DDL)](#data-definition-language-ddl)
+5. [Advanced SQL Concepts](#advanced-sql-concepts)
+6. [Additional Concepts](#additional-concepts)
+
+## Introduction to SQL
+SQL, or Structured Query Language, is a standard language for managing and manipulating relational databases. It is widely used for querying databases, inserting, updating, and deleting data, and defining database structures.
+
+## Basic SQL Concepts
+### 1. Relational Databases
+- Understanding the concept of relational databases.
+- Tables, rows, and columns.
+
+### 2. Basic Queries
+- SELECT statement.
+- Retrieving data from a single table.
+- WHERE clause for filtering data.
+
+### 3. Sorting and Filtering
+- ORDER BY clause for sorting.
+- LIMIT clause for limiting the number of rows returned.
+
+### 4. Aggregate Functions
+- SUM(), AVG(), MIN(), MAX(), COUNT() functions.
+- Grouping data with GROUP BY clause.
+- Filtering grouped data with HAVING clause.
+
+## Data Manipulation Language (DML)
+### 1. INSERT INTO
+- Adds new rows of data into a table.
+
+### 2. UPDATE
+- Modifies existing data in a table.
+
+### 3. DELETE FROM
+- Removes rows of data from a table.
+
+## Data Definition Language (DDL)
+### 1. CREATE TABLE
+- Creates a new table in the database.
+
+### 2. ALTER TABLE
+- Modifies the structure of an existing table.
+
+### 3. DROP TABLE
+- Deletes a table and its data from the database.
+
+### 4. CREATE INDEX
+- Creates an index on a table column to improve query performance.
+
+### 5. CREATE VIEW
+- Creates a virtual table based on the result set of a SELECT query.
+
+## Advanced SQL Concepts
+### 1. Joins
+- INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, CROSS JOIN.
+
+### 2. Subqueries
+- Writing subqueries within SELECT, FROM, WHERE clauses, correlated subqueries.
+
+### 3. Set Operations
+- UNION, INTERSECT, EXCEPT.
+
+### 4. Views
+- Creating, updating, and dropping views, benefits of using views.
+
+### 5. Indexes
+- Introduction to indexes, types of indexes (e.g., B-tree, Hash), creating and managing indexes.
+
+### 6. Performance Tuning
+- Index optimization, query optimization techniques (e.g., EXPLAIN), identifying and resolving performance bottlenecks.
+
+## Additional Concepts
+### 1. Constraints
+- Primary Key, Foreign Key, Unique Constraint, Check Constraint, Default Constraint.
+
+### 2. Transactions
+- Introduction to transactions, ACID properties (Atomicity, Consistency, Isolation, Durability).
+
+### 3. Stored Procedures
+- Definition and usage examples.
+
+### 4. Triggers
+- Definition and usage examples.
+
+### 5. Normalization
+- Introduction to database normalization, normal forms (1NF, 2NF, 3NF).
+
+### 6. Backup and Recovery
+- Importance of regular backups, strategies for database backup and recovery.
+
+### 7. Security
+- User authentication and authorization, role-based access control, best practices for securing databases.
+
+This SQL tutorial provides a comprehensive overview of SQL concepts, from basic to advanced topics. Feel free to explore each section to deepen your understanding of SQL and relational databases.
