@@ -1,0 +1,37 @@
+
+-- Subquery 
+
+--1)  find all employees who work in designation is in Finance
+
+
+
+SELECT * 
+FROM Employee 
+WHERE EmployeeID IN (
+    SELECT EmployeeID 
+    FROM EmployeeDesignation 
+    WHERE Designation IN ('Financial Analyst', 'Financial Advisor')
+);
+
+
+--2) Basic Subquery:
+-- Query: Retrieve the names of all employees who have a salary greater than the average salary.
+
+SELECT Name 
+FROM employees 
+WHERE Salary > (SELECT AVG(Salary) FROM employees);
+
+-- 3) Correlated Subquery:
+
+SELECT Name
+FROM Employee
+WHERE EmployeeID IN 
+(SELECT EmployeeID FROM EmployeeSalary WHERE Salary = (SELECT AVG(Salary) FROM EmployeeSalary));
+
+-- 4) Subquery with ORDER BY and LIMIT:
+
+SELECT DepartmentID, AVG(Salary) AS AvgSalary
+FROM EmployeeSalary
+GROUP BY DepartmentID
+ORDER BY AVG(Salary) DESC
+LIMIT 3;
