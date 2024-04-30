@@ -1,1 +1,4 @@
+--- In SQL, a join is used to combine rows from two or more tables based on a related column between them. 
+--- Joins are fundamental for querying data from multiple tables simultaneously, allowing for complex data retrieval and analysis.
+
 
