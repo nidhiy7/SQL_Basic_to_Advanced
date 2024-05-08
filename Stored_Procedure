@@ -1,1 +1,9 @@
+# Stored Procedure
+
+
+- A stored procedure in SQL is a precompiled collection of SQL statements that can be stored in the database for later execution.
+- It helps in modularizing and organizing code, improving performance, and enhancing security by controlling access to the database.
+
+
+
 
