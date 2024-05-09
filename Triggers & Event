@@ -1,1 +1,4 @@
 
+- In SQL, a trigger is a special type of stored procedure that automatically executes when certain events occur in the database.
+- Events can include INSERT, UPDATE, DELETE, or other data manipulation operations on a specific table. 
+- Triggers are useful for enforcing business rules, maintaining data integrity, and automating tasks. 
