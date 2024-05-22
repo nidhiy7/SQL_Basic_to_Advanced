@@ -18,3 +18,34 @@ SELECT id, name, department FROM employees
 UNION
 SELECT id, name, department FROM contractors;
 
+2.UNION ALL:
+
+- Combines the results of two queries and returns all rows, including duplicates.
+- Does not remove duplicate rows from the result set.
+- Columns in the SELECT statements must have the same number of columns and compatible data types.
+
+3. INTERSECT:
+
+- Returns only the rows that are common to both queries.
+- Removes duplicates, showing only the distinct rows present in both result sets.
+- Columns in the SELECT statements must have the same number of columns and compatible data types.
+
+4. EXCEPT (or MINUS in some databases like Oracle):
+
+- Returns only the rows from the first query that are not present in the second query.
+- Removes duplicates from the result set.
+- Columns in the SELECT statements must have the same number of columns and compatible data types.
+
+Differences:
+1.UNION vs. UNION ALL:
+UNION removes duplicate rows, whereas UNION ALL includes all rows (including duplicates) from the combined result sets.
+
+2.UNION vs. INTERSECT:
+UNION combines all distinct rows from both queries, while INTERSECT returns only the rows that are present in both queries.
+
+3. 3UNION vs. EXCEPT:
+UNION returns all distinct rows from both queries, whereas EXCEPT returns the distinct rows from the first query that are not in the second query.
+
+4. INTERSECT vs. EXCEPT:
+INTERSECT returns rows common to both queries, while EXCEPT returns rows from the first query that are not in the second query.
+
