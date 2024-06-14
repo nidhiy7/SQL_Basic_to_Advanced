@@ -18,5 +18,53 @@ User Experience:
 
 1) Use Index
 
+Indexes are essential for improving the performance of SQL queries by allowing the database
+to find and retrieve specific rows much faster than scanning the entire table.
+
+CREATE INDEX idx_last_name ON employees(last_name);
+
+-- Benefits of Using Indexes
+Reduced Data Access Time: Indexes minimize the amount of data scanned.
+Improved Query Performance: Complex queries involving joins and sorts run faster.
+Enhanced User Experience: Faster queries lead to a more responsive application.
+
+2) Using Union All to Optimize the Query
+
+Performance Comparison
+Scenario: Combining employee and contractor records without caring about duplicates.
+
+With UNION: The query checks for and removes duplicate rows, which adds overhead.
+With UNION ALL: The query simply concatenates the results, reducing execution time.
+
+3) Avoid Using Select * , Select specific Column
+
+4)  Optimizing Joins:
+
+Proper Indexing: Ensure that columns used in JOIN operations are indexed.
+Choose Right Join Types: Use the most efficient join type (INNER JOIN, LEFT JOIN) based on the use case.
+
+5)  Avoiding Subqueries:
+Replace with JOINs: Where possible, replace subqueries with JOINs or Common Table Expressions (CTEs) to improve performance.
+
+6) Batch Processing:
+Process in Chunks: For large data operations, process data in smaller batches to avoid overloading the system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
