@@ -1,1 +1,22 @@
 
+# Query Optimazation
+
+- Query optimization is the process of making SQL queries run faster and more efficiently
+
+# Why use of Query Optimaztion
+1) Performance Improvement - Faster Response Times: Optimized queries run faster, providing quicker results to users.
+Efficient Resource Use: Reduces CPU, memory, and disk I/O usage, leading to better overall system performance.
+
+2) Scalability:Handles More Load: Efficient queries allow the database to handle more transactions and users simultaneously.
+
+3) Cost Reduction: Efficiently running databases can reduce the need for additional hardware or cloud resources.
+User Experience:
+
+4) Better User Experience: Faster applications lead to improved satisfaction and usability.
+
+# Way to optimize the query
+
+1) Use Index
+
+
+
