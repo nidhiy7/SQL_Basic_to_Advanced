@@ -3,19 +3,14 @@ CTE ( Common Table Expression)
 Common Table Expressions (CTEs) in SQL provide a way to create temporary result sets that can be referenced within a query.
 They are particularly useful for breaking down complex queries into more manageable parts and improving query readability.
 
--- Without cte
-select * from EmployeeSalary
-where salary > (select avg(salary) from EmployeeSalary);
+-- reference within a SELECT, INSERT, UPDATE, or DELETE statement
 
--- With CTE
+-- Examples
+WITH AVG_SALARY AS (
+SELECT AVG(Salary)  as Avg_Salary from Employees )
 
-With avg_salary as(
-select avg(salary) as avg_sal from EmployeeSalary
-)
+Select * from employees 
+inner join AVG_SALARY ON Salary > Avg_Salary;
 
-select * from EmployeeSalary
-inner join avg_salary on Salary > avg_sal;
-
-Example 
-1) 
+-- Example 1: Simple CTE to List Employees with Their Departments
 
