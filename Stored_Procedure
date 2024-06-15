@@ -4,6 +4,22 @@
 - A stored procedure in SQL is a precompiled collection of SQL statements that can be stored in the database for later execution.
 - It helps in modularizing and organizing code, improving performance, and enhancing security by controlling access to the database.
 
+- Encapsulate Database logic and making it easier to manage and resuse the code
+
+-- Let's create a simple stored procedure that retrieves all records from a table called Employees:
+
+Create Procedure GetallEmployeedata
+as
+begin
+select * from Employees
+End;
+
+-- Executing the Precedure
+
+Exec GetallEmployeedata;
+
+
+
 
 
 
