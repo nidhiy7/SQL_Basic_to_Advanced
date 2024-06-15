@@ -14,3 +14,41 @@ inner join AVG_SALARY ON Salary > Avg_Salary;
 
 -- Example 1: Simple CTE to List Employees with Their Departments
 
+WITH EmployeeDepartment AS (
+    SELECT 
+        e.EmployeeID,
+        e.FirstName,
+        e.LastName,
+        e.Email,
+        e.JobTitle,
+        d.DepartmentName
+    FROM 
+        Employees e
+    JOIN 
+        Departments d ON e.DepartmentID = d.DepartmentID
+)
+SELECT 
+    EmployeeID,
+    FirstName,
+    LastName,
+    Email,
+    JobTitle,
+    DepartmentName
+FROM 
+    EmployeeDepartment;
+
+# Recursive CTE
+
+A Recursive CTE is useful for querying hierarchical data. It references itself within its definition.
+
+Example 2: Recursive CTE to List Employees and Their Reporting Hierarchy
+
+
+
+
+
+
+
+
+
+
