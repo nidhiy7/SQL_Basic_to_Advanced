@@ -18,6 +18,28 @@ End;
 
 Exec GetallEmployeedata;
 
+## MYSQL
+##1)
+
+DELIMITER $$
+
+CREATE PROCEDURE get_emp()
+BEGIN
+    SELECT * FROM employees;
+END $$
+
+DELIMITER ;
+
+##2) 
+delimiter $$
+Create Procedure find_emp(IN ID INT)
+BEGIN
+     SELECT * FROM employee
+     where emp_id = id;
+end $$
+delimiter ;
+
+call find_emp(2);
 
 
 
