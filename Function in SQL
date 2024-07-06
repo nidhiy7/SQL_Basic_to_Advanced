@@ -18,3 +18,34 @@ Date Functions in SQL:
 
 5) CONVERT() and CAST(): Functions used to convert date/time values from one data type to another or to a formatted string.
  = SELECT CONVERT(VARCHAR, GETDATE(), 106) AS DateAsString;
+
+
+Text Functions in SQL:
+
+LEN(): Returns the length of a string (number of characters).
+
+sql
+Copy code
+SELECT LEN('Hello, World!') AS StringLength;
+LEFT() and RIGHT(): Extract a specified number of characters from the left or right side of a string.
+
+sql
+Copy code
+SELECT LEFT('Hello, World!', 5) AS LeftSubstring;
+SELECT RIGHT('Hello, World!', 6) AS RightSubstring;
+SUBSTRING(): Returns a part of a string, starting at a specified position for a certain length of characters.
+
+sql
+Copy code
+SELECT SUBSTRING('Hello, World!', 7, 5) AS SubstringResult;
+UPPER() and LOWER(): Convert a string to uppercase or lowercase.
+
+sql
+Copy code
+SELECT UPPER('hello') AS UppercaseString;
+SELECT LOWER('WORLD') AS LowercaseString;
+CHARINDEX(): Returns the starting position of a substring within a string.
+
+sql
+Copy code
+SELECT CHARINDEX('World', 'Hello, World!') AS Position;
