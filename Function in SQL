@@ -1,1 +1,20 @@
-# Text Function 
+Date Functions in SQL:
+
+1) GETDATE(): Returns the current date and time from the system's clock.
+
+- SELECT GETDATE() AS CurrentDateTime;
+
+2) DATEADD(): Adds or subtracts a specified time interval (day, month, year, etc.) to/from a date.
+
+- SELECT DATEADD(MONTH, 3, '2023-01-15') AS DateAfter3Months;
+
+3) DATEDIFF(): Calculates the difference between two dates, in terms of a specified time interval (day, month, year, etc.).
+
+
+- SELECT DATEDIFF(DAY, '2023-01-01', '2023-01-15') AS DaysDifference;
+
+4) DATEPART(): Returns a specified part of a date (e.g., year, month, day).
+-SELECT DATEPART(YEAR, '2023-01-15') AS YearPart;
+
+5) CONVERT() and CAST(): Functions used to convert date/time values from one data type to another or to a formatted string.
+ = SELECT CONVERT(VARCHAR, GETDATE(), 106) AS DateAsString;
